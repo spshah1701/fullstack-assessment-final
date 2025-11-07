@@ -1,0 +1,27 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+async-graphql = { version = "7.0.17", features = ["chrono"] }
+async-graphql-axum = "7.0.17"
+
+axum = "0.8.4"
+quote = "1.0.40"
+sqlx = { version = "0.7", features = ["runtime-tokio", "postgres", "macros", "chrono", "uuid"] }
+syn = "2.0.106"
+tokio = { version = "1.37", features = ["macros", "rt-multi-thread"] }
+tower-http = { version = "0.5", features = ["cors"] }
+dotenvy = "0.15"
+tracing = "0.1.41"
+serde_json = "1.0.145"
+chrono = "0.4.42"
+
+[dev-dependencies]
+tokio-test = "0.4"
+async-graphql = { version = "7.0.17", features = ["chrono"] }
+sqlx = { version = "0.7", features = ["runtime-tokio", "postgres", "macros", "chrono", "uuid"] }
